@@ -2,32 +2,77 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.outline-text{
+    color: black;
+    text-shadow:
+    1px 1px 0 white,
+   -1px -1px 0 white,
+    1px -1px 0 white,
+   -1px 1px 0 white
+  ;
+}
+.gray-text{
+    color: #18191f;
+}
+.light-gray{
+    color: #252730;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+body{
+    color: white;
+}
+.glass{
+    background:rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+.hero-section{
+    /* width: 100%; */
+    /* background-color: aquamarine; */
+    background-image: url('/candle.jpg');
+    background-image: linear-gradient(black, #24335c);
+    background-size: cover;
+
+}
+
+.thumb {
+    mask-image: 
+    linear-gradient(to bottom, #000, #000), 
+    linear-gradient(to bottom, #000, #000);
+    mask-size: 46% 90%;
+    mask-position: 95% 100%,0% 0%;
+    mask-repeat: no-repeat;
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .slick-next{
+    right: 15px!important;
+    top: unset!important;
+    bottom: -70px!important;
+    
   }
+
+  .slick-prev {
+    left: auto !important;
+    right: 60px !important;
+    bottom: -70px !important;
+    top: unset !important;
+}
+
+.slick-prev:before,.slick-next:before{
+    font-size: 35px!important;
+    color: #6552cb!important;
+}
+
+.slick-dots{
+    text-align: left!important;
+    bottom: -50px!important;
+}
+.slick-dots li button:before{
+    font-size: 15px!important;
+    color: white!important;
+}
+.slick-dots li button:hover, .slick-dots li.slick-active button:before{
+    color: #7b61ff!important;
+}
+.slick-dots li button:hover:before{
+    color: #7b61ff!important;
 }
